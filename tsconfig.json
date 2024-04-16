@@ -22,6 +22,9 @@
     "paths": {
       "@spartan-ng/ui-icon-helm": ["./libs/ui/ui-icon-helm/src/index.ts"],
       "@spartan-ng/ui-button-helm": ["./libs/ui/ui-button-helm/src/index.ts"],
+      "@spartan-ng/ui-scrollarea-helm": [
+        "./libs/ui/ui-scrollarea-helm/src/index.ts",
+      ],
     },
   },
   "angularCompilerOptions": {

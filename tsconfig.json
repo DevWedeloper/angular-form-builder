@@ -25,6 +25,9 @@
       "@spartan-ng/ui-scrollarea-helm": [
         "./libs/ui/ui-scrollarea-helm/src/index.ts",
       ],
+      "@spartan-ng/ui-typography-helm": [
+        "./libs/ui/ui-typography-helm/src/index.ts",
+      ],
     },
   },
   "angularCompilerOptions": {

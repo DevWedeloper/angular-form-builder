@@ -1,4 +1,9 @@
-import { booleanAttribute, Component, input } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  Component,
+  input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-section-sub-heading',
@@ -15,6 +20,7 @@ import { booleanAttribute, Component, input } from '@angular/core';
       <ng-content />
     </h2>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionSubHeadingComponent {
   first = input(false, {

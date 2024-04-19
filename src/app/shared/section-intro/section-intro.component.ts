@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { hlmLead } from '@spartan-ng/ui-typography-helm';
 
 @Component({
@@ -16,6 +16,7 @@ import { hlmLead } from '@spartan-ng/ui-typography-helm';
     </h1>
     <p data-testingId="lead" class="${hlmLead}">{{ lead() }}</p>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionIntroComponent {
   name = input.required<string>();

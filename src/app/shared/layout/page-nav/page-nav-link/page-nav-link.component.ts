@@ -1,4 +1,9 @@
-import { Component, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -20,6 +25,7 @@ import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
       {{ label() }}
     </a>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageNavLinkComponent {
   protected activatedRoute = inject(ActivatedRoute);

@@ -16,15 +16,14 @@ describe('PageNavOutletComponent', () => {
       <app-page-nav-outlet />
     `,
   })
-  class PageNavOutletTestHostComponent {
+  class TestHostComponent {
     testTpl = viewChild.required<TemplateRef<unknown>>('test');
+    pageNavOutlet = viewChild.required<PageNavOutletComponent>(PageNavOutletComponent);
   }
 
-  let component: PageNavOutletComponent;
-  let fixture: ComponentFixture<PageNavOutletComponent>;
-  let pageNavOutletComponent: PageNavOutletTestHostComponent;
-  let pageNavOutletFixture: ComponentFixture<PageNavOutletTestHostComponent>;
-  let pageNavOutletDebugEl: DebugElement;
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
+  let debugEl: DebugElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -32,41 +31,38 @@ describe('PageNavOutletComponent', () => {
       providers: [{ provide: pageNavTemplate }],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PageNavOutletComponent);
-    component = fixture.componentInstance;
-    pageNavOutletFixture = TestBed.createComponent(
-      PageNavOutletTestHostComponent,
+    fixture = TestBed.createComponent(
+      TestHostComponent,
     );
-    pageNavOutletComponent = pageNavOutletFixture.componentInstance;
-    pageNavOutletDebugEl = pageNavOutletFixture.debugElement.query(
+    component = fixture.componentInstance;
+    debugEl = fixture.debugElement.query(
       By.directive(PageNavOutletComponent),
     );
     fixture.detectChanges();
-    pageNavOutletFixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component.pageNavOutlet).toBeTruthy();
   });
 
   it('should properly render content', () => {
-    let pageNavOutlet = pageNavOutletDebugEl.query(
+    let test = debugEl.query(
       By.css('[data-testingId="test"]'),
     );
-    expect(pageNavOutlet).toBeFalsy();
+    expect(test).toBeFalsy();
 
-    pageNavTemplate.set(pageNavOutletComponent.testTpl());
-    pageNavOutletFixture.detectChanges();
-    pageNavOutlet = pageNavOutletDebugEl.query(
+    pageNavTemplate.set(component.testTpl());
+    fixture.detectChanges();
+    test = debugEl.query(
       By.css('[data-testingId="test"]'),
     );
-    expect(pageNavOutlet).toBeTruthy();
+    expect(test).toBeTruthy();
 
     pageNavTemplate.set(null);
-    pageNavOutletFixture.detectChanges();
-    pageNavOutlet = pageNavOutletDebugEl.query(
+    fixture.detectChanges();
+    test = debugEl.query(
       By.css('[data-testingId="test"]'),
     );
-    expect(pageNavOutlet).toBeFalsy();
+    expect(test).toBeFalsy();
   });
 });

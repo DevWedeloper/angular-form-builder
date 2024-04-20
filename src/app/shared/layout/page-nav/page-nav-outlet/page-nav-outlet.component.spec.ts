@@ -18,7 +18,9 @@ describe('PageNavOutletComponent', () => {
   })
   class TestHostComponent {
     testTpl = viewChild.required<TemplateRef<unknown>>('test');
-    pageNavOutlet = viewChild.required<PageNavOutletComponent>(PageNavOutletComponent);
+    pageNavOutlet = viewChild.required<PageNavOutletComponent>(
+      PageNavOutletComponent,
+    );
   }
 
   let component: TestHostComponent;
@@ -31,13 +33,9 @@ describe('PageNavOutletComponent', () => {
       providers: [{ provide: pageNavTemplate }],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(
-      TestHostComponent,
-    );
+    fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
-    debugEl = fixture.debugElement.query(
-      By.directive(PageNavOutletComponent),
-    );
+    debugEl = fixture.debugElement.query(By.directive(PageNavOutletComponent));
     fixture.detectChanges();
   });
 
@@ -46,23 +44,17 @@ describe('PageNavOutletComponent', () => {
   });
 
   it('should properly render content', () => {
-    let test = debugEl.query(
-      By.css('[data-testingId="test"]'),
-    );
+    let test = debugEl.query(By.css('[data-testingId="test"]'));
     expect(test).toBeFalsy();
 
     pageNavTemplate.set(component.testTpl());
     fixture.detectChanges();
-    test = debugEl.query(
-      By.css('[data-testingId="test"]'),
-    );
+    test = debugEl.query(By.css('[data-testingId="test"]'));
     expect(test).toBeTruthy();
 
     pageNavTemplate.set(null);
     fixture.detectChanges();
-    test = debugEl.query(
-      By.css('[data-testingId="test"]'),
-    );
+    test = debugEl.query(By.css('[data-testingId="test"]'));
     expect(test).toBeFalsy();
   });
 });

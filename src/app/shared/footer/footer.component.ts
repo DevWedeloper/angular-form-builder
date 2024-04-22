@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { hlmMuted } from '@spartan-ng/ui-typography-helm';
 
@@ -23,5 +23,6 @@ import { hlmMuted } from '@spartan-ng/ui-typography-helm';
       </a>
     </footer>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {}

@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[spartanSideNavHeading]',
+  selector: '[appSideNavHeading]',
   standalone: true,
   host: {
     class:

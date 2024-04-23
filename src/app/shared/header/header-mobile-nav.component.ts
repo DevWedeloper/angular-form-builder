@@ -12,7 +12,7 @@ import {
 import { HlmSheetImports } from '@spartan-ng/ui-sheet-helm';
 import { SideNavContentComponent } from '../layout/side-nav/side-nav-content/side-nav-content.component';
 import { SideNavLinkDirective } from '../layout/side-nav/side-nav-link/side-nav-link.directive';
-import { NavLinkDirective } from '../nav-link.directive';
+import { NavLinkDirective } from '../nav-link/nav-link.directive';
 
 @Component({
   selector: 'app-mobile-nav',

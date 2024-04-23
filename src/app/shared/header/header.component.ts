@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
-import { NavLinkDirective } from '../nav-link.directive';
-import { HeaderDarkModeComponent } from './header-dark-mode.component';
+import { NavLinkDirective } from '../nav-link/nav-link.directive';
+import { HeaderDarkModeComponent } from './header-dark-mode/header-dark-mode.component';
 import { HeaderMobileNavComponent } from './header-mobile-nav.component';
 
 @Component({

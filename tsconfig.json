@@ -28,6 +28,7 @@
       "@spartan-ng/ui-typography-helm": [
         "./libs/ui/ui-typography-helm/src/index.ts",
       ],
+      "@spartan-ng/ui-menu-helm": ["./libs/ui/ui-menu-helm/src/index.ts"],
     },
   },
   "angularCompilerOptions": {

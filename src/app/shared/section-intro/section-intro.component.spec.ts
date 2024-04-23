@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionIntroComponent } from './section-intro.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { SectionIntroComponent } from './section-intro.component';
 
 describe('SectionIntroComponent', () => {
   let component: SectionIntroComponent;

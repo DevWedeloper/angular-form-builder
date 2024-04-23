@@ -13,7 +13,9 @@ describe('SideNavLinkDirective', () => {
   @Component({
     standalone: true,
     imports: [SideNavLinkDirective],
-    template: `<a appSideNavLink="/test" [disabled]="disabled">Link</a>`,
+    template: `
+      <a appSideNavLink="/test" [disabled]="disabled">Link</a>
+    `,
   })
   class TestHostComponent {
     disabled = false;

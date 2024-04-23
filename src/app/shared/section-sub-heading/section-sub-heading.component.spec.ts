@@ -8,7 +8,9 @@ describe('SectionSubHeadingComponent', () => {
   @Component({
     standalone: true,
     imports: [SectionSubHeadingComponent],
-    template: `<app-section-sub-heading>Test</app-section-sub-heading>`,
+    template: `
+      <app-section-sub-heading>Test</app-section-sub-heading>
+    `,
   })
   class TestHostComponent {
     sectionSubHeading = viewChild.required<SectionSubHeadingComponent>(

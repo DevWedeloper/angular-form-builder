@@ -8,7 +8,9 @@ describe('SideNavLinksComponent', () => {
   @Component({
     standalone: true,
     imports: [SideNavLinksComponent],
-    template: `<app-side-nav-links>Test</app-side-nav-links>`,
+    template: `
+      <app-side-nav-links>Test</app-side-nav-links>
+    `,
   })
   class TestHostComponent {
     sideNavLinks = viewChild.required<SideNavLinksComponent>(

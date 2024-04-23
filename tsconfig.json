@@ -29,6 +29,7 @@
         "./libs/ui/ui-typography-helm/src/index.ts",
       ],
       "@spartan-ng/ui-menu-helm": ["./libs/ui/ui-menu-helm/src/index.ts"],
+      "@spartan-ng/ui-sheet-helm": ["./libs/ui/ui-sheet-helm/src/index.ts"],
     },
   },
   "angularCompilerOptions": {

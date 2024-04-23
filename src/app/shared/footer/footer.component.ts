@@ -3,7 +3,7 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { hlmMuted } from '@spartan-ng/ui-typography-helm';
 
 @Component({
-  selector: 'spartan-footer',
+  selector: 'app-footer',
   standalone: true,
   imports: [HlmButtonDirective],
   host: {

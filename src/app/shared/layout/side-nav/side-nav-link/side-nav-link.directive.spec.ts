@@ -92,7 +92,7 @@ describe('SideNavLinkDirective', () => {
         expect(sideNavLinkEl.classList).not.toContain(expectedClass);
       });
 
-      router.navigate(['/test']);
+      router.navigate(['test']);
       flush();
       sideNavLinkEl = debugEl.nativeElement;
       expectedClasses.forEach((expectedClass) => {

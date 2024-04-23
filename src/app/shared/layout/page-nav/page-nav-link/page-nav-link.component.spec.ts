@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute, provideRouter } from '@angular/router';
-import { routes } from '../../../../app.routes';
 import { PageNavLinkComponent } from './page-nav-link.component';
 
 describe('PageNavLinkComponent', () => {
@@ -15,7 +14,7 @@ describe('PageNavLinkComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PageNavLinkComponent],
-      providers: [provideRouter(routes)],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     route = TestBed.inject(ActivatedRoute);

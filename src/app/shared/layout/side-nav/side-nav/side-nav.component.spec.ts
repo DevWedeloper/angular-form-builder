@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { routes } from '../../../../app.routes';
 import { SideNavContentComponent } from '../side-nav-content.component';
 import { SideNavComponent } from './side-nav.component';
 
@@ -15,7 +14,7 @@ describe('SideNavComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SideNavComponent],
-      providers: [provideRouter(routes)],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SideNavComponent);

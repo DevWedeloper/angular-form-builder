@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, viewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { routes } from '../../../../app.routes';
 import { SectionIntroComponent } from '../../../section-intro/section-intro.component';
 import { SectionSubHeadingComponent } from '../../../section-sub-heading/section-sub-heading.component';
 import { PageNavLinkComponent } from '../page-nav-link/page-nav-link.component';
@@ -49,7 +48,7 @@ describe('PageNavComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PageNavComponent],
-      providers: [provideRouter(routes), { provide: pageNavTemplate }],
+      providers: [provideRouter([]), { provide: pageNavTemplate }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);

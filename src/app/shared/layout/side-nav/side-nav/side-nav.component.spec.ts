@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { SideNavContentComponent } from '../side-nav-content.component';
+import { SideNavContentComponent } from '../side-nav-content/side-nav-content.component';
 import { SideNavComponent } from './side-nav.component';
 
 describe('SideNavComponent', () => {

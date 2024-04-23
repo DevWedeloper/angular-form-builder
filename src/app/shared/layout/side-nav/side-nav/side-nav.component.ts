@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HlmScrollAreaComponent } from '@spartan-ng/ui-scrollarea-helm';
-import { SideNavContentComponent } from '../side-nav-content.component';
+import { SideNavContentComponent } from '../side-nav-content/side-nav-content.component';
 
 @Component({
   selector: 'app-side-nav',

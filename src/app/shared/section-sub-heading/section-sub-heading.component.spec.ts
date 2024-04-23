@@ -9,49 +9,47 @@ describe('SectionSubHeadingComponent', () => {
     standalone: true,
     imports: [SectionSubHeadingComponent],
     template: `
-      <app-section-sub-heading>Test</app-section-sub-heading>
+      <app-section-sub-heading [first]="first">Test</app-section-sub-heading>
     `,
   })
   class TestHostComponent {
     sectionSubHeading = viewChild.required<SectionSubHeadingComponent>(
       SectionSubHeadingComponent,
     );
+    first = false;
   }
 
-  let fixture: ComponentFixture<SectionSubHeadingComponent>;
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
   let debugEl: DebugElement;
-  let hostComponent: TestHostComponent;
-  let hostFixture: ComponentFixture<TestHostComponent>;
-  let hostDebugEl: DebugElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SectionSubHeadingComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SectionSubHeadingComponent);
-    debugEl = fixture.debugElement;
-    hostFixture = TestBed.createComponent(TestHostComponent);
-    hostComponent = hostFixture.componentInstance;
-    hostDebugEl = hostFixture.debugElement.query(
+    fixture = TestBed.createComponent(TestHostComponent);
+    component = fixture.componentInstance;
+    debugEl = fixture.debugElement.query(
       By.directive(SectionSubHeadingComponent),
     );
-    hostFixture.detectChanges();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(hostComponent.sectionSubHeading).toBeTruthy();
+    expect(component.sectionSubHeading).toBeTruthy();
   });
 
   it('should properly render content', () => {
-    const subHeadingEl: HTMLElement = hostDebugEl.nativeElement;
+    const subHeadingEl: HTMLElement = debugEl.nativeElement;
     expect(subHeadingEl.textContent?.trim()).toEqual('Test');
   });
 
   it('should add class -mt-12 to self if first is true', () => {
     const subHeadingEl: HTMLElement = debugEl.nativeElement;
     expect(subHeadingEl.classList).not.toContain('-mt-12');
-    fixture.componentRef.setInput('first', true);
+
+    component.first = true;
     fixture.detectChanges();
     expect(subHeadingEl.classList).toContain('-mt-12');
   });

@@ -24,7 +24,7 @@ describe('PageNavComponent', () => {
     template: `
       <section appMainSection>
         <app-section-intro name="Test" lead="Testable" />
-        <app-section-sub-heading id="h2-deaing">
+        <app-section-sub-heading id="h2-heading">
           H2 Heading
         </app-section-sub-heading>
         <h3 id="h3-heading">H3 Heading 1</h3>

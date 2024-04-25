@@ -65,8 +65,8 @@ describe('SideNavLinkDirective', () => {
     expect(tabindex).toEqual('-1');
   });
 
-  describe('add class', () => {
-    it('add necessary classes when disabled', () => {
+  describe('Add class', () => {
+    it('should add necessary classes when disabled', () => {
       const expectedClasses = [
         '!text-zinc-300',
         'dark:!text-zinc-700',
@@ -85,7 +85,7 @@ describe('SideNavLinkDirective', () => {
       });
     });
 
-    it('add necessary classes when routerLinkActive', fakeAsync(() => {
+    it('should add necessary classes when routerLinkActive', fakeAsync(() => {
       const expectedClasses = ['font-medium', '!text-foreground'];
       let sideNavLinkEl: HTMLElement = debugEl.nativeElement;
       expectedClasses.forEach((expectedClass) => {

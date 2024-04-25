@@ -72,14 +72,13 @@ describe('SideNavLinkDirective', () => {
         'dark:!text-zinc-700',
         'pointer-events-none',
       ];
-      let sideNavLinkEl: HTMLElement = debugEl.nativeElement;
+      const sideNavLinkEl: HTMLElement = debugEl.nativeElement;
       expectedClasses.forEach((expectedClass) => {
         expect(sideNavLinkEl.classList).not.toContain(expectedClass);
       });
 
       component.disabled = true;
       fixture.detectChanges();
-      sideNavLinkEl = debugEl.nativeElement;
       expectedClasses.forEach((expectedClass) => {
         expect(sideNavLinkEl.classList).toContain(expectedClass);
       });
@@ -87,14 +86,13 @@ describe('SideNavLinkDirective', () => {
 
     it('should add necessary classes when routerLinkActive', fakeAsync(() => {
       const expectedClasses = ['font-medium', '!text-foreground'];
-      let sideNavLinkEl: HTMLElement = debugEl.nativeElement;
+      const sideNavLinkEl: HTMLElement = debugEl.nativeElement;
       expectedClasses.forEach((expectedClass) => {
         expect(sideNavLinkEl.classList).not.toContain(expectedClass);
       });
 
       router.navigate(['test']);
       flush();
-      sideNavLinkEl = debugEl.nativeElement;
       expectedClasses.forEach((expectedClass) => {
         expect(sideNavLinkEl.classList).toContain(expectedClass);
       });

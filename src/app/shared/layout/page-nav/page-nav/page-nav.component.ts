@@ -21,6 +21,7 @@ type SamePageAnchorLink = {
   id: string;
   label: string;
   isNested: boolean;
+  isActive: boolean;
 };
 
 @Component({
@@ -41,6 +42,7 @@ type SamePageAnchorLink = {
                 [ngClass]="{ 'pl-4': link.isNested }"
                 [fragment]="link.id"
                 [label]="link.label"
+                [active]="link.isActive"
               />
             } @empty {
               @if (isDevMode()) {
@@ -68,7 +70,9 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
   private page: HTMLElement = (inject(ElementRef).nativeElement as HTMLElement)
     .previousSibling as HTMLElement;
 
-  protected links = computed(() => {
+  private getActiveLink = signal<string | undefined>(undefined);
+
+  private getHeadings = computed(() => {
     if (isPlatformServer(this.platformId)) {
       if (isDevMode()) {
         console.error(
@@ -85,7 +89,12 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
     const headings = Array.from(
       this.page.querySelectorAll(selectors.join(',')),
     );
-    const links = headings.map((element) => {
+
+    return headings;
+  });
+
+  protected links = computed(() => {
+    const links = this.getHeadings()?.map((element) => {
       const { id, children, localName, textContent } = element;
       const isSubHeading = localName === 'app-section-sub-heading';
       const label =
@@ -94,10 +103,21 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
       if (isDevMode() && id === '') {
         console.error(`[DEV] id missing for heading "${label}"`);
       }
-      return { id, label, isNested: !isSubHeading };
+      return {
+        id,
+        label,
+        isNested: !isSubHeading,
+        isActive: id === this.getActiveLink(),
+      };
     });
     return links as SamePageAnchorLink[];
   });
+
+  constructor() {
+    this.getHeadings()?.forEach((element) =>
+      this.createActiveLinkObserver().observe(element),
+    );
+  }
 
   ngAfterViewInit() {
     if (!this.pageNavTpl()) return;
@@ -106,5 +126,20 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     pageNavTemplate.set(null);
+  }
+
+  private createActiveLinkObserver() {
+    return new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.getActiveLink.set(entry.target.id);
+          } else {
+            return;
+          }
+        });
+      },
+      { rootMargin: `0% 0% -70% 0%` },
+    );
   }
 }

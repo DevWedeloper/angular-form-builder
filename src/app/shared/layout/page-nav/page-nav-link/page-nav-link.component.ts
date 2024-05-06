@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -9,7 +10,7 @@ import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-page-nav-link',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NgClass],
   host: {
     class: 'mt-0 pt-2',
     role: 'listitem',
@@ -20,6 +21,7 @@ import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
       [routerLink]="[]"
       [relativeTo]="activatedRoute"
       [fragment]="fragment()"
+      [ngClass]="{ 'font-medium !text-foreground': active() }"
       class="inline-block rounded text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       {{ label() }}
@@ -31,4 +33,5 @@ export class PageNavLinkComponent {
   protected activatedRoute = inject(ActivatedRoute);
   fragment = input.required<string>();
   label = input.required<string>();
+  active = input.required<boolean>();
 }

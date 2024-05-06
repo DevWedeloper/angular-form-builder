@@ -24,6 +24,7 @@ describe('PageNavLinkComponent', () => {
     debugEl = fixture.debugElement;
     fixture.componentRef.setInput('fragment', '');
     fixture.componentRef.setInput('label', '');
+    fixture.componentRef.setInput('active', false);
     fixture.detectChanges();
   });
 
@@ -59,5 +60,24 @@ describe('PageNavLinkComponent', () => {
     ).nativeElement;
 
     expect(linkEl.textContent?.trim()).toEqual(label);
+  });
+
+  it('should render correct class when active', () => {
+    const expectedClasses = ['font-medium', '!text-foreground'];
+
+    const linkEl: HTMLElement = debugEl.query(
+      By.css('[data-testingId="link"]'),
+    ).nativeElement;
+
+    expectedClasses.forEach((expectedClass) => {
+      expect(linkEl.classList).not.toContain(expectedClass);
+    });
+
+    fixture.componentRef.setInput('active', true);
+    fixture.detectChanges();
+
+    expectedClasses.forEach((expectedClass) => {
+      expect(linkEl.classList).toContain(expectedClass);
+    });
   });
 });

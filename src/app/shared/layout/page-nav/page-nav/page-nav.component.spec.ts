@@ -48,6 +48,14 @@ describe('PageNavComponent', () => {
       providers: [provideRouter([]), { provide: pageNavTemplate }],
     }).compileComponents();
 
+    const mockIntersectionObserver = jest.fn();
+    mockIntersectionObserver.mockReturnValue({
+      observe: () => null,
+      unobserve: () => null,
+      disconnect: () => null
+    });
+    window.IntersectionObserver = mockIntersectionObserver;
+
     fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
     debugEl = fixture.debugElement.query(By.directive(PageNavOutletComponent));

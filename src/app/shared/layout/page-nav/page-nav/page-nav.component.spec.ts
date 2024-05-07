@@ -52,7 +52,7 @@ describe('PageNavComponent', () => {
     mockIntersectionObserver.mockReturnValue({
       observe: () => null,
       unobserve: () => null,
-      disconnect: () => null
+      disconnect: () => null,
     });
     window.IntersectionObserver = mockIntersectionObserver;
 

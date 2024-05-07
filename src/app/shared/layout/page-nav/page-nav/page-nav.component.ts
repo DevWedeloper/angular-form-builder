@@ -126,6 +126,7 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     pageNavTemplate.set(null);
+    this.createActiveLinkObserver().disconnect();
   }
 
   private createActiveLinkObserver() {

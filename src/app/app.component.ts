@@ -14,15 +14,19 @@ import { SideNavComponent } from './shared/layout/side-nav/side-nav/side-nav.com
   template: `
     <app-header />
     <div class="mx-auto max-w-screen-2xl">
-      <app-side-nav />
-      <main
-        class="sticky top-0 overflow-hidden py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]"
+      <div
+        class="mx-auto flex w-full flex-1 items-start px-4 sm:px-8 md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
       >
-        <div class="px-2">
-          <router-outlet />
-        </div>
-        <app-page-nav-outlet />
-      </main>
+        <app-side-nav />
+        <main
+          class="sticky top-0 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]"
+        >
+          <div class="px-2">
+            <router-outlet />
+          </div>
+          <app-page-nav-outlet />
+        </main>
+      </div>
     </div>
     <app-footer />
   `,

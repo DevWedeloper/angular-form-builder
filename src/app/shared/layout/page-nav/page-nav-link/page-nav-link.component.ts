@@ -5,12 +5,12 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-page-nav-link',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgClass],
+  imports: [RouterLink, NgClass],
   host: {
     class: 'mt-0 pt-2',
     role: 'listitem',

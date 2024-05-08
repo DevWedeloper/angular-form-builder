@@ -13,7 +13,9 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { HlmScrollAreaComponent } from '@spartan-ng/ui-scrollarea-helm';
+import { Observable } from 'rxjs';
 import { PageNavLinkComponent } from '../page-nav-link/page-nav-link.component';
 import { pageNavTemplate } from '../page-nav-outlet/page-nav-outlet.component';
 
@@ -70,8 +72,6 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
   private page: HTMLElement = (inject(ElementRef).nativeElement as HTMLElement)
     .previousSibling as HTMLElement;
 
-  private getActiveLink = signal<string | undefined>(undefined);
-
   private getHeadings = computed(() => {
     if (isPlatformServer(this.platformId)) {
       if (isDevMode()) {
@@ -93,6 +93,28 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
     return headings;
   });
 
+  private getActiveLink = toSignal(
+    new Observable<string>((subscriber) => {
+      if (typeof IntersectionObserver === 'undefined') return;
+
+      const activeLinkObserver = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              subscriber.next(entry.target.id);
+            }
+          }),
+        { rootMargin: `0% 0% -70% 0%` },
+      );
+
+      this.getHeadings()?.forEach((element) =>
+        activeLinkObserver.observe(element),
+      );
+
+      subscriber.add(() => activeLinkObserver.disconnect());
+    }),
+  );
+
   protected links = computed(() => {
     const links = this.getHeadings()?.map((element) => {
       const { id, children, localName, textContent } = element;
@@ -113,12 +135,6 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
     return links as SamePageAnchorLink[];
   });
 
-  constructor() {
-    this.getHeadings()?.forEach((element) =>
-      this.createActiveLinkObserver().observe(element),
-    );
-  }
-
   ngAfterViewInit() {
     if (!this.pageNavTpl()) return;
     pageNavTemplate.set(this.pageNavTpl());
@@ -126,21 +142,5 @@ export class PageNavComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     pageNavTemplate.set(null);
-    this.createActiveLinkObserver().disconnect();
-  }
-
-  private createActiveLinkObserver() {
-    return new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.getActiveLink.set(entry.target.id);
-          } else {
-            return;
-          }
-        });
-      },
-      { rootMargin: `0% 0% -70% 0%` },
-    );
   }
 }

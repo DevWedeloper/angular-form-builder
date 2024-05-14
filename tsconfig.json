@@ -18,24 +18,38 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"],
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "paths": {
-      "@spartan-ng/ui-icon-helm": ["./libs/ui/ui-icon-helm/src/index.ts"],
-      "@spartan-ng/ui-button-helm": ["./libs/ui/ui-button-helm/src/index.ts"],
+      "@spartan-ng/ui-icon-helm": [
+        "./libs/ui/ui-icon-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-button-helm": [
+        "./libs/ui/ui-button-helm/src/index.ts"
+      ],
       "@spartan-ng/ui-scrollarea-helm": [
-        "./libs/ui/ui-scrollarea-helm/src/index.ts",
+        "./libs/ui/ui-scrollarea-helm/src/index.ts"
       ],
       "@spartan-ng/ui-typography-helm": [
-        "./libs/ui/ui-typography-helm/src/index.ts",
+        "./libs/ui/ui-typography-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-menu-helm": ["./libs/ui/ui-menu-helm/src/index.ts"],
-      "@spartan-ng/ui-sheet-helm": ["./libs/ui/ui-sheet-helm/src/index.ts"],
-    },
+      "@spartan-ng/ui-menu-helm": [
+        "./libs/ui/ui-menu-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-sheet-helm": [
+        "./libs/ui/ui-sheet-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-input-helm": [
+        "./libs/ui/ui-input-helm/src/index.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true,
-  },
+    "strictTemplates": true
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
 import { BrnSelectImports } from '@spartan-ng/ui-select-brain';
 import { HlmSelectImports } from '@spartan-ng/ui-select-helm';
@@ -40,6 +40,7 @@ import {
       </hlm-select-content>
     </brn-select>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicSelectComponent extends BaseDynamicControl {
   options = (this.control.config as DynamicSelectControl).options;

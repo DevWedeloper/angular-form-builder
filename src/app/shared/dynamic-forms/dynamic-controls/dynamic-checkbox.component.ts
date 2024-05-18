@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HlmCheckboxComponent } from '@spartan-ng/ui-checkbox-helm';
 import { ValidatorMessageContainerDirective } from '../../dynamic-form-errors/input-error/validator-message-container.directive';
 import {
@@ -33,5 +33,6 @@ import {
       #containerDir="ValidatorMessageContainerDirective"
     />
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicCheckboxComponent extends BaseDynamicControl {}

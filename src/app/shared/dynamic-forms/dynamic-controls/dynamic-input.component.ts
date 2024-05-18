@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HlmInputDirective } from '@spartan-ng/ui-input-helm';
 import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
 import { DynamicInputControl } from '../dynamic-forms.type';
@@ -27,6 +27,7 @@ import {
       class="w-full"
     />
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicInputComponent extends BaseDynamicControl {
   type = (this.control.config as DynamicInputControl).type;

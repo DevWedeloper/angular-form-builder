@@ -1,5 +1,5 @@
 import { AsyncPipe, KeyValuePipe, NgComponentOutlet } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ControlInjectorPipe } from '../control-injector.pipe';
 import { DynamicControlResolverService } from '../dynamic-control-resolver.service';
@@ -40,6 +40,7 @@ import {
       }
     </fieldset>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicGroupComponent extends BaseDynamicControl {
   protected controlResolver = inject(DynamicControlResolverService);

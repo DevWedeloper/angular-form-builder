@@ -19,7 +19,7 @@ import { SideNavComponent } from './shared/layout/side-nav/side-nav/side-nav.com
       >
         <app-side-nav />
         <main
-          class="sticky top-0 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]"
+          class="sticky top-0 w-full py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[minmax(0,1fr)_280px]"
         >
           <div class="px-2">
             <router-outlet />

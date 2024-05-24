@@ -18,14 +18,14 @@ import { SideNavLinksComponent } from '../side-nav-links/side-nav-links.componen
   },
   template: `
     <div class="pb-4">
-      <h4 appSideNavHeading>Heading</h4>
+      <h4 appSideNavHeading>Dynamic Forms</h4>
       <app-side-nav-links>
         <a
           data-testingId="link"
           (click)="linkClicked.emit()"
-          appSideNavLink="/.."
+          appSideNavLink="builder"
         >
-          Link
+          Builder
         </a>
       </app-side-nav-links>
     </div>

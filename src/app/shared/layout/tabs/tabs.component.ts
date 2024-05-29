@@ -42,17 +42,33 @@ const tabContent =
           'Tablist showing ' + firstTab() + ' and ' + secondTab()
         "
       >
-        <button class="${tabBtn}" [brnTabsTrigger]="firstTab()">
+        <button
+          data-testingId="first-tab"
+          class="${tabBtn}"
+          [brnTabsTrigger]="firstTab()"
+        >
           {{ firstTab() }}
         </button>
-        <button class="${tabBtn}" [brnTabsTrigger]="secondTab()">
+        <button
+          data-testingId="second-tab"
+          class="${tabBtn}"
+          [brnTabsTrigger]="secondTab()"
+        >
           {{ secondTab() }}
         </button>
       </div>
-      <div class="${tabContent}" [brnTabsContent]="firstTab()">
+      <div
+        data-testingId="first-tab-content"
+        class="${tabContent}"
+        [brnTabsContent]="firstTab()"
+      >
         <ng-content select="[firstTab]" />
       </div>
-      <div class="${tabContent}" [brnTabsContent]="secondTab()">
+      <div
+        data-testingId="second-tab-content"
+        class="${tabContent}"
+        [brnTabsContent]="secondTab()"
+      >
         <ng-content select="[secondTab]" />
       </div>
     </div>

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { hlmH4, hlmP } from '@spartan-ng/ui-typography-helm';
-import { DynamicFormsPageComponent } from '../../shared/dynamic-forms/dynamic-forms-page/dynamic-forms-page.component';
 import { PageNavOutletComponent } from '../../shared/layout/page-nav/page-nav-outlet/page-nav-outlet.component';
 import { PageNavComponent } from '../../shared/layout/page-nav/page-nav/page-nav.component';
 import { MainSectionDirective } from '../../shared/main-section.directive';
 import { SectionIntroComponent } from '../../shared/section-intro/section-intro.component';
 import { SectionSubHeadingComponent } from '../../shared/section-sub-heading/section-sub-heading.component';
+import { DynamicFormsPageComponent } from './dynamic-forms/dynamic-forms-page/dynamic-forms-page.component';
 
 @Component({
   selector: 'app-builder',

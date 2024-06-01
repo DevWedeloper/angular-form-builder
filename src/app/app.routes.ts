@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { BuilderComponent } from './pages/builder/builder.component';
 
 export const routes: Routes = [
   {
     path: 'builder',
-    component: BuilderComponent,
+    loadComponent: () =>
+      import('./pages/builder/builder.component').then((m) => m.BuilderComponent),
   },
   {
     path: '',

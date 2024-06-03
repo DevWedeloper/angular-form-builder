@@ -27,6 +27,7 @@ import { SideNavLinksComponent } from '../side-nav-links/side-nav-links.componen
         >
           Builder
         </a>
+        <a (click)="linkClicked.emit()" appSideNavLink="guide">Guide</a>
       </app-side-nav-links>
     </div>
   `,

@@ -18,9 +18,7 @@ describe('PageNavOutletComponent', () => {
   })
   class TestHostComponent {
     testTpl = viewChild.required<TemplateRef<unknown>>('test');
-    pageNavOutlet = viewChild.required<PageNavOutletComponent>(
-      PageNavOutletComponent,
-    );
+    pageNavOutlet = viewChild.required(PageNavOutletComponent);
   }
 
   let component: TestHostComponent;

@@ -21,7 +21,7 @@ describe('TabsComponent', () => {
     `,
   })
   class TestHostComponent {
-    tabs = viewChild.required<TabsComponent>(TabsComponent);
+    tabs = viewChild.required(TabsComponent);
     value = '';
     tabActivatedValue = '';
 

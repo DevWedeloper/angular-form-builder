@@ -17,9 +17,7 @@ describe('SideNavContentComponent', () => {
     `,
   })
   class TestHostComponent {
-    sideNavContent = viewChild.required<SideNavContentComponent>(
-      SideNavContentComponent,
-    );
+    sideNavContent = viewChild.required(SideNavContentComponent);
     linkClicked() {}
   }
 

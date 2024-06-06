@@ -35,7 +35,7 @@ describe('PageNavComponent', () => {
     `,
   })
   class TestHostComponent {
-    pageNav = viewChild.required<PageNavComponent>(PageNavComponent);
+    pageNav = viewChild.required(PageNavComponent);
   }
 
   let component: TestHostComponent;

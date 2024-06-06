@@ -13,9 +13,7 @@ describe('SectionSubHeadingComponent', () => {
     `,
   })
   class TestHostComponent {
-    sectionSubHeading = viewChild.required<SectionSubHeadingComponent>(
-      SectionSubHeadingComponent,
-    );
+    sectionSubHeading = viewChild.required(SectionSubHeadingComponent);
     first = false;
   }
 

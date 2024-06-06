@@ -13,9 +13,7 @@ describe('SideNavLinksComponent', () => {
     `,
   })
   class TestHostComponent {
-    sideNavLinks = viewChild.required<SideNavLinksComponent>(
-      SideNavLinksComponent,
-    );
+    sideNavLinks = viewChild.required(SideNavLinksComponent);
   }
 
   let component: TestHostComponent;

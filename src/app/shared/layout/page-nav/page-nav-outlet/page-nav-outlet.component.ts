@@ -17,7 +17,7 @@ export const pageNavTemplate = signal<TemplateRef<unknown> | null>(null);
       'sticky top-14 -mt-10 hidden h-[calc(100vh-3.5rem)] pt-6 text-sm xl:block',
   },
   template: `
-    <ng-container [ngTemplateOutlet]="pageNavTemplate()"></ng-container>
+    <ng-container [ngTemplateOutlet]="pageNavTemplate()" />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

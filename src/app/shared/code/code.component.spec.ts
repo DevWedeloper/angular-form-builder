@@ -9,6 +9,7 @@ import {
 import { Clipboard } from '@angular/cdk/clipboard';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { vi } from 'vitest';
 import { CodeComponent } from './code.component';
 
 describe('CodeComponent', () => {
@@ -57,7 +58,7 @@ describe('CodeComponent', () => {
   });
 
   it('should copy to clipboard', () => {
-    const clipboardSpy = jest.spyOn(clipboard, 'copy');
+    const clipboardSpy = vi.spyOn(clipboard, 'copy');
     const text = 'hello world';
     fixture.componentRef.setInput('code', text);
     fixture.detectChanges();

@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, viewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
+import { vi } from 'vitest';
 import { routes } from '../../../../app.routes';
 import { SideNavContentComponent } from './side-nav-content.component';
 
@@ -42,7 +43,7 @@ describe('SideNavContentComponent', () => {
   });
 
   it('linkClicked should emit when link is clicked', () => {
-    const linkClickedSpy = jest.spyOn(component, 'linkClicked');
+    const linkClickedSpy = vi.spyOn(component, 'linkClicked');
 
     const linkEl: HTMLElement = debugEl.query(
       By.css('[data-testingId="link"]'),

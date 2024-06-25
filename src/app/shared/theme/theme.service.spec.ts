@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
+import { vi } from 'vitest';
 import { DarkMode, ThemeService } from './theme.service';
 
 describe('ThemeService', () => {
@@ -22,7 +23,7 @@ describe('ThemeService', () => {
 
   it('should properly set theme', () => {
     let value: DarkMode | undefined;
-    const setItemSpy = jest.spyOn(Storage.prototype, 'setItem');
+    const setItemSpy = vi.spyOn(Storage.prototype, 'setItem');
 
     service.setDarkMode('dark');
     service.darkMode$.subscribe((v) => (value = v));

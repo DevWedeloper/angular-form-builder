@@ -4,7 +4,6 @@ import { Component, DebugElement, viewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { vi } from 'vitest';
-import { routes } from '../../../../app.routes';
 import { SideNavContentComponent } from './side-nav-content.component';
 
 describe('SideNavContentComponent', () => {
@@ -29,7 +28,7 @@ describe('SideNavContentComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SideNavContentComponent],
-      providers: [provideRouter(routes)],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);

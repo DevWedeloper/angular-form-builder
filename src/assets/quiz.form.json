@@ -1,0 +1,117 @@
+{
+  "1": {
+    "controlType": "identification",
+    "question": "What is the capital of France?",
+    "answer": "",
+    "correctAnswer": ["Paris", "paris"],
+    "points": 3,
+    "order": 0
+  },
+  "2": {
+    "controlType": "trueOrFalse",
+    "question": "The Earth revolves around the Sun.",
+    "answer": "",
+    "correctAnswer": true,
+    "points": 3,
+    "order": 1
+  },
+  "3": {
+    "controlType": "essay",
+    "question": "Describe your favorite food and why you like it.",
+    "answer": "",
+    "points": 5,
+    "order": 2
+  },
+  "4": {
+    "controlType": "multipleChoice",
+    "mode": "single",
+    "question": "What is the color of the sky on a clear day?",
+    "options": [
+      { "label": "Red", "value": 1 },
+      { "label": "Blue", "value": 2 },
+      { "label": "Green", "value": 3 },
+      { "label": "Purple", "value": 4 }
+    ],
+    "answer": "",
+    "correctAnswer": [2],
+    "points": 3,
+    "order": 3
+  },
+  "5": {
+    "controlType": "multipleChoice",
+    "mode": "multiple",
+    "question": "Which of the following are primary colors?",
+    "options": [
+      { "label": "Red", "value": 1 },
+      { "label": "Orange", "value": 2 },
+      { "label": "Yellow", "value": 3 },
+      { "label": "Purple", "value": 4 }
+    ],
+    "answer": "",
+    "correctAnswer": [1, 3],
+    "points": 3,
+    "order": 4
+  },
+  "6": {
+    "controlType": "identification",
+    "question": "Who wrote the famous play \"Hamlet\"?",
+    "note": "Answer in either all lowercase letters, or capitalize the first letter of each name.",
+    "answer": "",
+    "correctAnswer": ["William Shakespeare", "william shakespeare"],
+    "points": 3,
+    "order": 5
+  },
+  "7": {
+    "controlType": "trueOrFalse",
+    "question": "A dog is a mammal.",
+    "answer": "",
+    "correctAnswer": true,
+    "points": 3,
+    "order": 6
+  },
+  "8": {
+    "controlType": "essay",
+    "question": "Explain the water cycle briefly.",
+    "answer": "",
+    "points": 5,
+    "order": 7
+  },
+  "9": {
+    "controlType": "multipleChoice",
+    "mode": "single",
+    "question": "What is the largest planet in our solar system?",
+    "options": [
+      { "label": "Earth", "value": 1 },
+      { "label": "Mars", "value": 2 },
+      { "label": "Jupiter", "value": 3 },
+      { "label": "Saturn", "value": 4 }
+    ],
+    "answer": "",
+    "correctAnswer": [3],
+    "points": 3,
+    "order": 8
+  },
+  "10": {
+    "controlType": "multipleChoice",
+    "mode": "multiple",
+    "question": "Which of the following are senses?",
+    "options": [
+      { "label": "Sight", "value": 1 },
+      { "label": "Taste", "value": 2 },
+      { "label": "Smell", "value": 3 },
+      { "label": "Balance", "value": 4 }
+    ],
+    "answer": "",
+    "correctAnswer": [1, 2, 3, 4],
+    "points": 3,
+    "order": 9
+  },
+  "11": {
+    "controlType": "trueOrFalse",
+    "question": "There are 13 months in a year.",
+    "answer": "",
+    "correctAnswer": false,
+    "points": 3,
+    "order": 10
+  }
+}

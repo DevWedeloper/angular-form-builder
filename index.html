@@ -5,7 +5,8 @@
     <title>AngularFormBuilder</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/src/styles.css" />
     <script>
       if (localStorage.theme !== 'default') {
         if (document && document.body) {
@@ -35,5 +36,6 @@
   </head>
   <body class="h-full bg-background text-foreground">
     <app-root></app-root>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

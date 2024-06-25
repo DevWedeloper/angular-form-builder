@@ -17,7 +17,7 @@ import { CONTROL_DATA } from '../control-data.token';
 import { CONTROL_INDEX } from '../control-index.token';
 import { CONTROL_SUBMITTED } from '../control-submitted.token';
 import { QuizControl } from '../dynamic-forms.type';
-import { QuizCardComponent } from './quiz-card.component';
+import { QuizCardComponent } from './components/quiz-card.component';
 
 export const comparatorFn = (
   a: KeyValue<string, QuizControl>,

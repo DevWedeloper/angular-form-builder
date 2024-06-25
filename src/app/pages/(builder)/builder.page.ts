@@ -50,4 +50,4 @@ import { DynamicFormsPageComponent } from './dynamic-forms/dynamic-forms-page/dy
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BuilderComponent {}
+export default class BuilderComponent {}

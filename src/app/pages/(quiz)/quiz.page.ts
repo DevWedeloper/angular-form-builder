@@ -53,7 +53,7 @@ import { QuizService } from './quiz.service';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuizComponent {
+export default class QuizComponent {
   private showQuizResults = inject(QuizService).showQuizResults;
   protected startQuiz = inject(QuizService).startQuiz;
 

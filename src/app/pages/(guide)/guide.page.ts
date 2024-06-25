@@ -616,7 +616,7 @@ const guideLink = 'h-6 px-0.5 text-base underline';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GuideComponent {
+export default class GuideComponent {
   protected readonly baseJSONObject = baseJSONObject;
   protected readonly baseInputObject = baseInputObject;
   protected readonly baseSelectObject = baseSelectObject;

@@ -21,6 +21,13 @@ describe('SideNavContentComponent', () => {
     linkClicked() {}
   }
 
+  const routes = [
+    {
+      path: 'builder',
+      component: TestHostComponent,
+    },
+  ];
+
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
   let debugEl: DebugElement;
@@ -28,7 +35,7 @@ describe('SideNavContentComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SideNavContentComponent],
-      providers: [provideRouter([])],
+      providers: [provideRouter(routes)],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);

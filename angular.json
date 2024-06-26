@@ -58,7 +58,7 @@
           }
         },
         "test": {
-          "builder": "@analogjs/platform:vitest",
+          "builder": "@analogjs/vitest-angular:test",
           "options": {
             "config": "vite.config.ts"
           }

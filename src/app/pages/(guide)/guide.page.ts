@@ -105,19 +105,34 @@ const guideLink = 'h-6 px-0.5 text-base underline';
         contain the title of the form. Inside the controls object, we'll specify
         the type and properties of each form element.
       </p>
-      <app-code [code]="baseJSONObject" />
+      @defer {
+        <app-code [code]="baseJSONObject" />
+      }
+
       <p class="${hlmP} mb-4">
         In this example we would have four types of form fields, input, select,
         checkbox, and group. We'll be defining their shape.
       </p>
       <p class="${hlmP} mb-4">Input:</p>
-      <app-code [code]="baseInputObject" />
+      @defer {
+        <app-code [code]="baseInputObject" />
+      }
+
       <p class="${hlmP} mb-4">Select:</p>
-      <app-code [code]="baseSelectObject" />
+      @defer {
+        <app-code [code]="baseSelectObject" />
+      }
+
       <p class="${hlmP} mb-4">Checkbox:</p>
-      <app-code [code]="baseCheckboxObject" />
+      @defer {
+        <app-code [code]="baseCheckboxObject" />
+      }
+
       <p class="${hlmP} mb-4">Group:</p>
-      <app-code [code]="baseGroupObject" />
+      @defer {
+        <app-code [code]="baseGroupObject" />
+      }
+
       <p class="${hlmP} mb-4">
         The validators object is optional. But it is where we would resolve
         Angular validators. An example validators object is shown below. While
@@ -125,7 +140,9 @@ const guideLink = 'h-6 px-0.5 text-base underline';
         not be the most practical. It serves to demonstrate the syntax of each
         validator.
       </p>
-      <app-code [code]="validatorsObject" />
+      @defer {
+        <app-code [code]="validatorsObject" />
+      }
 
       <h3 id="defining-the-object__types" class="${hlmH4} mb-2 mt-6">Types</h3>
       <p class="${hlmP}">
@@ -138,7 +155,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/dynamic-forms.type.ts
         </code>
       </p>
-      <app-code [code]="dynamicFormsTypes" />
+      @defer {
+        <app-code [code]="dynamicFormsTypes" />
+      }
+
       <p class="${hlmP}">
         We omit prototype, compose, and composeAsync from the type
         <code class="${hlmCode}">ValidatorKeys</code>
@@ -181,7 +201,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/control-data.token.ts
         </code>
       </p>
-      <app-code [code]="controlDataToken" />
+      @defer {
+        <app-code [code]="controlDataToken" />
+      }
+
       <p class="${hlmP} mb-4">
         We use a generic type defaulting to
         <code class="${hlmCode}">DynamicControl</code>
@@ -204,7 +227,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/dynamic-controls/base-dynamic-control.ts
         </code>
       </p>
-      <app-code [code]="baseDynamicControls" />
+      @defer {
+        <app-code [code]="baseDynamicControls" />
+      }
+
       <p class="${hlmP}">
         We'll be creating the
         <code class="${hlmCode}">DynamicValidatorMessageDirective</code>
@@ -263,7 +289,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/resolve-validators.ts
         </code>
       </p>
-      <app-code [code]="resolveValidators" />
+      @defer {
+        <app-code [code]="resolveValidators" />
+      }
+
       <p class="${hlmP} mb-4">
         This function iterates through the validators object and tries to
         convert each key into a corresponding Angular validator.
@@ -285,25 +314,37 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/dynamic-controls/dynamic-input.component.ts
         </code>
       </p>
-      <app-code [code]="dynamicInputComponent" />
+      @defer {
+        <app-code [code]="dynamicInputComponent" />
+      }
+
       <p class="${hlmP} mb-4">
         <code class="${hlmCode}">
           src/app/shared/dynamic-forms/dynamic-controls/dynamic-select.component.ts
         </code>
       </p>
-      <app-code [code]="dynamicSelectComponent" />
+      @defer {
+        <app-code [code]="dynamicSelectComponent" />
+      }
+
       <p class="${hlmP} mb-4">
         <code class="${hlmCode}">
           src/app/shared/dynamic-forms/dynamic-controls/dynamic-checkbox.component.ts
         </code>
       </p>
-      <app-code [code]="dynamicCheckboxComponent" />
+      @defer {
+        <app-code [code]="dynamicCheckboxComponent" />
+      }
+
       <p class="${hlmP} mb-4">
         <code class="${hlmCode}">
           src/app/shared/dynamic-forms/dynamic-controls/dynamic-group.component.ts
         </code>
       </p>
-      <app-code [code]="dynamicGroupComponent" />
+      @defer {
+        <app-code [code]="dynamicGroupComponent" />
+      }
+
       <p class="${hlmP}">
         As you've seen, this pattern of injecting
         <code class="${hlmCode}">CONTROL_DATA</code>
@@ -344,7 +385,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/dynamic-control-resolver.service.ts
         </code>
       </p>
-      <app-code [code]="dynamicControlResolver" />
+      @defer {
+        <app-code [code]="dynamicControlResolver" />
+      }
+
       <p class="${hlmP} mb-4">
         The resolve function acts like a cache for dynamic control components.
         It first checks if the component for a given type is already loaded. If
@@ -368,7 +412,9 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/control-injector.pipe.ts
         </code>
       </p>
-      <app-code [code]="controlInjector" />
+      @defer {
+        <app-code [code]="controlInjector" />
+      }
 
       <h3 id="resolving-the-form__creating-the-form" class="${hlmH4} mb-2 mt-6">
         Creating the form
@@ -383,7 +429,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-forms/dynamic-forms-page/dynamic-forms-page.component.ts
         </code>
       </p>
-      <app-code [code]="dynamicFormsPageComponent" />
+      @defer {
+        <app-code [code]="dynamicFormsPageComponent" />
+      }
+
       <p class="${hlmP}">
         Similar to how we resolve controls within the
         <code class="${hlmCode}">DynamicGroupComponent</code>
@@ -426,7 +475,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-form-errors/input-error/validation-error-messages.token.ts
         </code>
       </p>
-      <app-code [code]="validationErrorMessagesToken" />
+      @defer {
+        <app-code [code]="validationErrorMessagesToken" />
+      }
+
       <p class="${hlmP} mb-4">
         We use function as value so we could provide parameters that make the
         message more descriptive.
@@ -434,7 +486,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
       <p class="${hlmP} mb-4">
         This is an example of how we can override the default error messages.
       </p>
-      <app-code [code]="validationErrorMessageOverride" class="mb-4" />
+      @defer {
+        <app-code [code]="validationErrorMessageOverride" class="mb-4" />
+      }
+
       <p class="${hlmP}">
         While using a pipe to match the appropriate error message is optional,
         it improves code readability. Additionally, a console warning is
@@ -445,7 +500,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-form-errors/error-message.pipe.ts
         </code>
       </p>
-      <app-code [code]="errorMessagePipe" class="mb-4" />
+      @defer {
+        <app-code [code]="errorMessagePipe" class="mb-4" />
+      }
+
       <p class="${hlmP}">
         This component handles error display. We'll explore how to use it later.
       </p>
@@ -454,7 +512,9 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-form-errors/input-error/input-error.component.ts
         </code>
       </p>
-      <app-code [code]="inputErrorComponent" />
+      @defer {
+        <app-code [code]="inputErrorComponent" />
+      }
 
       <h3
         id="dynamic-error-handling__error-state-matcher-strategy"
@@ -471,18 +531,27 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-form-errors/input-error/error-state-matcher.service.ts
         </code>
       </p>
-      <app-code [code]="errorStateMatcherService" class="mb-4" />
+      @defer {
+        <app-code [code]="errorStateMatcherService" class="mb-4" />
+      }
+
       <p class="${hlmP} mb-4">
         Dependency injection allows us to easily switch between different error
         state matcher strategies.
       </p>
-      <app-code [code]="errorStateMatcherOverride" class="mb-4" />
+      @defer {
+        <app-code [code]="errorStateMatcherOverride" class="mb-4" />
+      }
+
       <p class="${hlmP} mb-4">
         In cases where you only want to change the default error state matcher
         for specific fields, rather than the entire component, you can do the
         following.
       </p>
-      <app-code [code]="errorStateMatcherAsInput" />
+      @defer {
+        <app-code [code]="errorStateMatcherAsInput" />
+      }
+
       <p class="${hlmP} mb-4">
         The directive we'll create in the next section will accept this custom
         error state matcher as an input.
@@ -502,7 +571,10 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-form-errors/dynamic-validator-message.directive.ts
         </code>
       </p>
-      <app-code [code]="dynamicValidatorMessageDirective" />
+      @defer {
+        <app-code [code]="dynamicValidatorMessageDirective" />
+      }
+
       <p class="${hlmP}">
         The selector eliminates the need to manually write a directive for each
         control. Simply import this directive, and you're set! Additionally, you
@@ -550,13 +622,19 @@ const guideLink = 'h-6 px-0.5 text-base underline';
           src/app/shared/dynamic-form-errors/input-error/validator-message-container.directive.ts
         </code>
       </p>
-      <app-code [code]="validatorMessageContainerDirective" class="mb-4" />
+      @defer {
+        <app-code [code]="validatorMessageContainerDirective" class="mb-4" />
+      }
+
       <p class="${hlmP} mb-4">
         We use
         <code class="${hlmCode}">exportAs</code>
         to get the instance of the directive instead of the native element.
       </p>
-      <app-code [code]="validatorMessageContainerExample" class="mb-4" />
+      @defer {
+        <app-code [code]="validatorMessageContainerExample" class="mb-4" />
+      }
+
       <p class="${hlmP} mb-4">
         Here is an example on how we could the
         <code class="${hlmCode}">ValidatorMessageContainerDirective</code>

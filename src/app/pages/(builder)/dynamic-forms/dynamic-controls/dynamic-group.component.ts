@@ -73,9 +73,7 @@ import { comparatorFn, dynamicControlProvider } from './base-dynamic-control';
           "
           [ngComponentOutletInjector]="
             control.key
-              | controlInjector
-                : control.value
-                : controlPath + '.' + control.key
+              | controlInjector: control.value : controlPath + '.' + control.key
           "
         />
       }
@@ -99,10 +97,7 @@ import { comparatorFn, dynamicControlProvider } from './base-dynamic-control';
           <hlm-icon name="lucidePencil" hlmMenuIcon class="text-green-500" />
           <span>Edit</span>
         </button>
-        <button
-          hlmMenuItem
-          (click)="deleteControl.set(controlPath)"
-        >
+        <button hlmMenuItem (click)="deleteControl.set(controlPath)">
           <hlm-icon name="lucideTrash2" hlmMenuIcon class="text-red-500" />
           <span>Delete</span>
         </button>

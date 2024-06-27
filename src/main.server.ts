@@ -1,11 +1,11 @@
 import '@angular/platform-server/init';
 import 'zone.js/node';
 
+import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { renderApplication } from '@angular/platform-server';
 import { AppComponent } from './app/app.component';
 import { config } from './app/app.config.server';
-import { enableProdMode } from '@angular/core';
-import { renderApplication } from '@angular/platform-server';
 
 if (import.meta.env.PROD) {
   enableProdMode();

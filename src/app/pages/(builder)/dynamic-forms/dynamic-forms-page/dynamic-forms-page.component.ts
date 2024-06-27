@@ -61,7 +61,7 @@ export const editDescription = signal<string | null>(null);
         <div firstTab appCodePreview>
           <app-dynamic-form
             [formConfig]="formConfig() || null"
-            (formValue)="onSubmit($event)"  
+            (formValue)="onSubmit($event)"
           />
         </div>
         <app-code secondTab [code]="formConfig()?.config | json" disableCopy />

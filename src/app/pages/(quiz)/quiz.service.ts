@@ -2,15 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { FormGroup } from '@angular/forms';
-import {
-  EMPTY,
-  catchError,
-  filter,
-  interval,
-  map,
-  switchMap,
-  takeUntil,
-} from 'rxjs';
+import { filter, interval, map, switchMap, takeUntil } from 'rxjs';
 import { Answers, QuizFormControls } from './dynamic-forms/dynamic-forms.type';
 
 @Injectable({

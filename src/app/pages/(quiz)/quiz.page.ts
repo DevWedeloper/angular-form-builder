@@ -1,3 +1,4 @@
+import { RouteMeta } from '@analogjs/router';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
@@ -6,11 +7,20 @@ import { CodePreviewDirective } from '../../shared/code/code-preview.directive';
 import { PageNavOutletComponent } from '../../shared/layout/page-nav/page-nav-outlet/page-nav-outlet.component';
 import { PageNavComponent } from '../../shared/layout/page-nav/page-nav/page-nav.component';
 import { MainSectionDirective } from '../../shared/main-section.directive';
+import { metaWith } from '../../shared/meta/meta.util';
 import { SectionIntroComponent } from '../../shared/section-intro/section-intro.component';
 import { SectionSubHeadingComponent } from '../../shared/section-sub-heading/section-sub-heading.component';
 import { DynamicFormsPageComponent } from './dynamic-forms/dynamic-forms-page/dynamic-forms-page.component';
 import { QuizResultComponent } from './dynamic-forms/quiz-result/quiz-result.component';
 import { QuizService } from './quiz.service';
+
+export const routeMeta: RouteMeta = {
+  meta: metaWith(
+    'Angular Form Builder - Quiz',
+    'An example quiz app made with dynamic forms.',
+  ),
+  title: 'Quiz | Angular Form Builder',
+};
 
 @Component({
   selector: 'app-quiz',
@@ -36,9 +46,7 @@ import { QuizService } from './quiz.service';
       <div appCodePreview class="rounded-md border border-border">
         @switch (quizFlow()) {
           @case ('initial') {
-            <button hlmBtn (click)="startQuiz.set(true)">
-              Start
-            </button>
+            <button hlmBtn (click)="startQuiz.set(true)">Start</button>
           }
           @case ('inProgress') {
             <app-dynamic-forms-page />

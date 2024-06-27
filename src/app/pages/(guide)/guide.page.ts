@@ -1,3 +1,4 @@
+import { RouteMeta } from '@analogjs/router';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { hlmCode, hlmH4, hlmP, hlmUl } from '@spartan-ng/ui-typography-helm';
@@ -5,6 +6,7 @@ import { CodeComponent } from '../../shared/code/code.component';
 import { PageNavOutletComponent } from '../../shared/layout/page-nav/page-nav-outlet/page-nav-outlet.component';
 import { PageNavComponent } from '../../shared/layout/page-nav/page-nav/page-nav.component';
 import { MainSectionDirective } from '../../shared/main-section.directive';
+import { metaWith } from '../../shared/meta/meta.util';
 import { SectionIntroComponent } from '../../shared/section-intro/section-intro.component';
 import { SectionSubHeadingComponent } from '../../shared/section-sub-heading/section-sub-heading.component';
 import {
@@ -36,6 +38,14 @@ import {
   validatorMessageContainerExample,
   validatorsObject,
 } from './guide-codes';
+
+export const routeMeta: RouteMeta = {
+  meta: metaWith(
+    'Angular Form Builder - Guide',
+    'Deep dive into building a dynamic form.',
+  ),
+  title: 'Guide | Angular Form Builder',
+};
 
 const guideLink = 'h-6 px-0.5 text-base underline';
 

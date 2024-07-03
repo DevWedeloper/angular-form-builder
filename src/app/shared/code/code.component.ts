@@ -43,6 +43,7 @@ declare const Prism: typeof import('prismjs');
         (click)="copyToClipBoard()"
         hlmBtn
         variant="ghost"
+        aria-label="Copy to clipboard"
         class="absolute right-2 top-2 h-6 w-6 p-1"
       >
         <hlm-icon

@@ -8,6 +8,13 @@ import { SideNavComponent } from './shared/layout/side-nav/side-nav/side-nav.com
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    SideNavComponent,
+    PageNavOutletComponent,
+  ],
   host: {
     class: 'text-foreground block antialiased',
   },
@@ -31,13 +38,6 @@ import { SideNavComponent } from './shared/layout/side-nav/side-nav/side-nav.com
     <app-footer />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    SideNavComponent,
-    PageNavOutletComponent,
-  ],
 })
 export class AppComponent {
   title = 'angular-form-builder';

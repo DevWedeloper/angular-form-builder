@@ -120,7 +120,14 @@ export class DynamicFormsPageComponent implements OnDestroy {
         const validationResult = formConfigSchema.safeParse(config);
 
         if (!validationResult.success) {
-          throw new Error(`Something is wrong with your form config...`);
+          console.error(`Something is wrong with your form config...`);
+          return {
+            config: {
+              controls: {},
+              description: this.formDescription(),
+            },
+            form,
+          };
         }
 
         return { config: validationResult.data, form };

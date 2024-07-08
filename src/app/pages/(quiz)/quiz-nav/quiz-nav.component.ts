@@ -33,7 +33,7 @@ export const controls = signal<
             'text-red-500': control.status === 'INVALID'
           }"
           [disabled]="!control.dirty"
-          class="text-none my-1 h-6 w-fit text-base hover:no-underline disabled:text-gray-500"
+          class="my-1 h-6 w-fit text-base hover:no-underline disabled:text-gray-500"
           (click)="currentPage.set(equivalentPage(control.index))"
         >
           Question {{ control.index + 1 }}

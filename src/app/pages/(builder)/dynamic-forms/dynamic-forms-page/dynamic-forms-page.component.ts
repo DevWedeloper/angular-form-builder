@@ -13,11 +13,11 @@ import {
 import { FormGroup } from '@angular/forms';
 import { BrnSeparatorComponent } from '@spartan-ng/ui-separator-brain';
 import { HlmSeparatorDirective } from '@spartan-ng/ui-separator-helm';
-import { combineLatest, filter, map, merge } from 'rxjs';
+import { BehaviorSubject, combineLatest, filter, map, merge } from 'rxjs';
 import { CodePreviewDirective } from '../../../../shared/code/code-preview.directive';
 import { CodeComponent } from '../../../../shared/code/code.component';
 import { TabsComponent } from '../../../../shared/layout/tabs/tabs.component';
-import { DynamicControl } from '../dynamic-forms.type';
+import { DynamicControl, DynamicFormConfig } from '../dynamic-forms.type';
 import {
   addProperty,
   deleteProperty,
@@ -108,6 +108,11 @@ export class DynamicFormsPageComponent implements OnDestroy {
 
   protected formDescription = signal<string>('New Form');
 
+  private previousFormConfig = new BehaviorSubject<DynamicFormConfig>({
+    controls: this.controlConfig(),
+    description: this.formDescription(),
+  });
+
   protected formConfig = toSignal(
     combineLatest([
       toObservable(this.controlConfig).pipe(
@@ -122,14 +127,12 @@ export class DynamicFormsPageComponent implements OnDestroy {
         if (!validationResult.success) {
           console.error(`Something is wrong with your form config...`);
           return {
-            config: {
-              controls: {},
-              description: this.formDescription(),
-            },
+            config: { ...this.previousFormConfig.value },
             form,
           };
         }
 
+        this.previousFormConfig.next(config);
         return { config: validationResult.data, form };
       }),
     ),

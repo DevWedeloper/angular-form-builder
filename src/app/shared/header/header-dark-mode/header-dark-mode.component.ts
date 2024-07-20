@@ -1,10 +1,10 @@
-import { CdkMenuTrigger } from '@angular/cdk/menu';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { provideIcons } from '@ng-icons/core';
 import { lucideMoon } from '@ng-icons/lucide';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
+import { BrnMenuTriggerDirective } from '@spartan-ng/ui-menu-brain';
 import { HlmMenuComponent, HlmMenuImports } from '@spartan-ng/ui-menu-helm';
 import { DarkMode, ThemeService } from '../../theme/theme.service';
 
@@ -12,7 +12,7 @@ import { DarkMode, ThemeService } from '../../theme/theme.service';
   selector: 'app-dark-mode',
   standalone: true,
   imports: [
-    CdkMenuTrigger,
+    BrnMenuTriggerDirective,
     HlmMenuImports,
     HlmButtonDirective,
     HlmIconComponent,
@@ -25,7 +25,7 @@ import { DarkMode, ThemeService } from '../../theme/theme.service';
       size="sm"
       variant="ghost"
       align="end"
-      [cdkMenuTriggerFor]="themeTpl"
+      [brnMenuTriggerFor]="themeTpl"
       hlmBtn
     >
       <hlm-icon name="lucideMoon" size="sm" />

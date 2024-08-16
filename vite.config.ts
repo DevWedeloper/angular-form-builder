@@ -9,7 +9,6 @@ export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
     publicDir: 'src/assets',
-    cacheDir: './node_modules/.vite',
     build: {
       outDir: './dist/./client',
       reportCompressedSize: true,

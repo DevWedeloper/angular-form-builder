@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
 import { lucideMenu, lucideX } from '@ng-icons/lucide';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
@@ -11,8 +10,6 @@ import {
 } from '@spartan-ng/ui-sheet-brain';
 import { HlmSheetImports } from '@spartan-ng/ui-sheet-helm';
 import { SideNavContentComponent } from '../layout/side-nav/side-nav-content/side-nav-content.component';
-import { SideNavLinkDirective } from '../layout/side-nav/side-nav-link/side-nav-link.directive';
-import { NavLinkDirective } from '../nav-link/nav-link.directive';
 
 @Component({
   selector: 'app-mobile-nav',
@@ -25,9 +22,6 @@ import { NavLinkDirective } from '../nav-link/nav-link.directive';
     HlmIconComponent,
     SideNavContentComponent,
     HlmScrollAreaComponent,
-    RouterLink,
-    NavLinkDirective,
-    SideNavLinkDirective,
   ],
   providers: [provideIcons({ lucideMenu, lucideX })],
   template: `

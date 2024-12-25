@@ -1,7 +1,6 @@
 import { RouteMeta } from '@analogjs/router';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { hlmH4, hlmP } from '@spartan-ng/ui-typography-helm';
-import { PageNavOutletComponent } from '../../shared/layout/page-nav/page-nav-outlet/page-nav-outlet.component';
 import { PageNavComponent } from '../../shared/layout/page-nav/page-nav/page-nav.component';
 import { MainSectionDirective } from '../../shared/main-section.directive';
 import { metaWith } from '../../shared/meta/meta.util';
@@ -22,7 +21,6 @@ export const routeMeta: RouteMeta = {
   standalone: true,
   imports: [
     PageNavComponent,
-    PageNavOutletComponent,
     MainSectionDirective,
     SectionIntroComponent,
     SectionSubHeadingComponent,
